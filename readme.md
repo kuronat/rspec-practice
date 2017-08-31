@@ -1,7 +1,8 @@
+
 # RSpec入門
 * Railsとは関係なく、RSpecそのものについて学ぶ
 * RSpec自体はRailsとは独立して使うことができる
-* 関係ないけどJupyter便利(bashカーネルを入れた)
+* 本稿はJupyterのbashカーネルで作成した(便利)
 
 
 ```bash
@@ -43,17 +44,17 @@ cat ./spec.rb
 rspec ./spec.rb
 ```
 
-    *
+    *
     
     Pending: (Failures listed here are expected and do not affect your suite's status)
-    
-      1) くろなつさんについて その名はくろなつ
-         # Not yet implemented
-         # ./spec.rb:2
-    
+    
+      1) くろなつさんについて その名はくろなつ
+         # Not yet implemented
+         # ./spec.rb:2
+    
     
     Finished in 0.00186 seconds (files took 0.11436 seconds to load)
-    1 example, 0 failures, 1 pending
+    1 example, 0 failures, 1 pending
     
 
 
@@ -79,10 +80,10 @@ cat ./spec.rb
 rspec ./spec.rb
 ```
 
-    .
+    .
     
     Finished in 0.00295 seconds (files took 0.09912 seconds to load)
-    1 example, 0 failures
+    1 example, 0 failures
     
 
 
@@ -121,25 +122,90 @@ cat ./spec.rb
 rspec ./spec.rb
 ```
 
-    F.
+    F.
     
     Failures:
     
       1) くろなつさんについて 挨拶ができる
-         Failure/Error: DEFAULT_FAILURE_NOTIFIER = lambda { |failure, _opts| raise failure }
-           expected #<Kuronat:0x007fe8a885eec0> to respond to :greeting
-         # ./_spec1.rb:4:in `block (2 levels) in <top (required)>'
+         Failure/Error: DEFAULT_FAILURE_NOTIFIER = lambda { |failure, _opts| raise failure }
+           expected #<Kuronat:0x007fe8a885eec0> to respond to :greeting
+         # ./_spec1.rb:4:in `block (2 levels) in <top (required)>'
     
     Finished in 0.02146 seconds (files took 0.10213 seconds to load)
-    2 examples, 1 failure
+    2 examples, 1 failure
     
     Failed examples:
     
-    rspec  # くろなつさんについて 挨拶ができる
+    rspec  # くろなつさんについて 挨拶ができる
     
 
 
 
 
 * 挨拶がまだできないことが、テストが落ちたことでわかる
-* できるようにする
+
+## コードを直す
+
+
+```bash
+cat ./main.rb
+```
+
+    class Kuronat
+      def name
+        "くろなつ"
+      end
+    
+      def greeting
+        "はろー"
+      end
+    end
+
+
+
+```bash
+rspec ./spec.rb
+```
+
+    ..
+    
+    Finished in 0.00276 seconds (files took 0.09711 seconds to load)
+    2 examples, 0 failures
+    
+
+
+## デフォルトパス
+
+* これまで明示的にspecのスクリプトを指定したが `test/*_spec.rb` に置くことで `rspec` と叩くだけでテストできる
+
+
+```bash
+ls spec/
+```
+
+    kurona2_spec.rb	kurona_spec.rb
+
+
+
+```bash
+rspec
+```
+
+    ..
+    
+    Finished in 0.00431 seconds (files took 0.10292 seconds to load)
+    2 examples, 0 failures
+    
+
+
+
+```bash
+rspec ./spec
+```
+
+    ..
+    
+    Finished in 0.004 seconds (files took 0.10315 seconds to load)
+    2 examples, 0 failures
+    
+
