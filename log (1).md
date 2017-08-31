@@ -44,17 +44,17 @@ cat ./spec.rb
 rspec ./spec.rb
 ```
 
-    [33m*[0m
+    *
     
     Pending: (Failures listed here are expected and do not affect your suite's status)
-    [33m
-      1) くろなつさんについて その名はくろなつ[0m
-         [36m# Not yet implemented[0m
-    [36m     # ./spec.rb:2
-    [0m
+    
+      1) くろなつさんについて その名はくろなつ
+         # Not yet implemented
+         # ./spec.rb:2
+    
     
     Finished in 0.00186 seconds (files took 0.11436 seconds to load)
-    [33m1 example, 0 failures, 1 pending[0m
+    1 example, 0 failures, 1 pending
     
 
 
@@ -80,10 +80,10 @@ cat ./spec.rb
 rspec ./spec.rb
 ```
 
-    [32m.[0m
+    .
     
     Finished in 0.00295 seconds (files took 0.09912 seconds to load)
-    [32m1 example, 0 failures[0m
+    1 example, 0 failures
     
 
 
@@ -122,21 +122,21 @@ cat ./spec.rb
 rspec ./spec.rb
 ```
 
-    [31mF[0m[32m.[0m
+    F.
     
     Failures:
     
       1) くろなつさんについて 挨拶ができる
-         [31mFailure/Error: [0m[1;34;4mDEFAULT_FAILURE_NOTIFIER[0m = lambda { |failure, _opts| raise failure }[0m
-         [31m  expected #<Kuronat:0x007fe8a885eec0> to respond to :greeting[0m
-         [36m# ./_spec1.rb:4:in `block (2 levels) in <top (required)>'[0m
+         Failure/Error: DEFAULT_FAILURE_NOTIFIER = lambda { |failure, _opts| raise failure }
+           expected #<Kuronat:0x007fe8a885eec0> to respond to :greeting
+         # ./_spec1.rb:4:in `block (2 levels) in <top (required)>'
     
     Finished in 0.02146 seconds (files took 0.10213 seconds to load)
-    [31m2 examples, 1 failure[0m
+    2 examples, 1 failure
     
     Failed examples:
     
-    [31mrspec [0m [36m# くろなつさんについて 挨拶ができる[0m
+    rspec  # くろなつさんについて 挨拶ができる
     
 
 
